@@ -13,9 +13,9 @@ export const dataSourceOptions: DataSourceOptions = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [],
-  migrations: [],
-  synchronize: false,
+  entities: ['dist/**/*.entity{.ts,.js}'], // Path to entity files after compilation.
+  migrations: ['dist/db/migrations/*{.ts,.js}'], // Path to migration files after compilation.
+  synchronize: false, // It automatically syncs the database schema with the entities each time the application starts. Disable in production.
   logging: false,
 };
 
